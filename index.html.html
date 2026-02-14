@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Anu 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&family=Handlee&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  overflow-x:hidden;
+}
+
+/* ===== SECTIONS ===== */
+section{
+  min-height:100vh;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  padding:40px 20px;
+  position:relative;
+  overflow:hidden;
+}
+section.active{display:flex}
+
+/* ================= PAGE 1 ================= */
+#page1{
+  background:linear-gradient(to bottom,#020111,#0f0c29,#302b63);
+  flex-direction:column;
+  text-align:center;
+  color:#fff;
+}
+
+/* Moon */
+.moon{
+  position:absolute;
+  top:60px;
+  right:40px;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:radial-gradient(circle,#fff6b0,#ffd966,#f4c430);
+  box-shadow:0 0 40px rgba(255,220,120,0.9);
+}
+
+/* Stars */
+.star{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:white;
+  border-radius:50%;
+  animation:twinkle 3s infinite;
+}
+@keyframes twinkle{50%{opacity:0.3}}
+
+/* Shooting stars */
+.shooting{
+  position:absolute;
+  width:80px;
+  height:2px;
+  background:linear-gradient(to right,white,transparent);
+  animation:shoot 2s linear forwards;
+}
+@keyframes shoot{
+  to{transform:translate(-300px,200px);opacity:0}
+}
+
+/* Trees */
+.trees{
+  position:absolute;
+  bottom:120px;
+  width:100%;
+  height:180px;
+}
+.tree{
+  position:absolute;
+  bottom:0;
+  width:80px;
+  height:180px;
+  background:#020111;
+  clip-path:polygon(50% 0%,0% 100%,100% 100%);
+  animation:sway 4s ease-in-out infinite alternate;
+}
+@keyframes sway{
+  from{transform:rotate(-1deg)}
+  to{transform:rotate(1deg)}
+}
+
+/* Ocean */
+.ocean{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:120px;
+  background:linear-gradient(to top,#001f3f,#003366,#004080);
+}
+.wave{
+  position:absolute;
+  width:200%;
+  height:100%;
+  background:rgba(255,255,255,0.05);
+  border-radius:100%;
+  animation:waveMove 10s linear infinite;
+}
+@keyframes waveMove{
+  to{transform:translateX(-50%)}
+}
+
+/* Page 1 Text */
+#page1 h1{
+  font-family:'Pacifico',cursive;
+  font-size:28px;
+  margin-bottom:30px;
+  z-index:2;
+}
+.start-btn{
+  padding:15px 30px;
+  font-family:'Pacifico',cursive;
+  font-size:20px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ff69b4,#ff1493);
+  color:white;
+  box-shadow:0 0 25px rgba(255,105,180,.8);
+  cursor:pointer;
+  z-index:2;
+}
+
+/* ================= PAGE 2 ================= */
+#page2{
+  background:linear-gradient(to bottom,#1b0036,#30004d,#1b0036);
+  color:white;
+}
+
+.bg-float{
+  position:absolute;
+  font-size:24px;
+  opacity:0.25;
+  animation:floatUp 12s linear infinite;
+}
+@keyframes floatUp{
+  from{transform:translateY(110vh)}
+  to{transform:translateY(-120vh)}
+}
+
+.memories{
+  max-width:380px;
+  display:flex;
+  flex-direction:column;
+  gap:90px;
+  z-index:2;
+}
+
+.memory-card{text-align:center}
+.memory-card img,
+.memory-card video{
+  width:100%;
+  border-radius:28px;
+}
+
+.soft-frame img,.soft-frame video{padding:10px;background:linear-gradient(135deg,#ff9ecf,#ffd6ec)}
+.hot-frame video{padding:12px;background:linear-gradient(135deg,#8b0000,#ff1744,#ff9100)}
+.cute-frame img{padding:12px;background:linear-gradient(135deg,#ffe6f2,#ffcce6);border:4px dashed #ffb6d9}
+.white-frame video{padding:14px;background:#fff}
+.flower-frame img{padding:16px;background:linear-gradient(135deg,#e8f5e9,#fffde7);border:5px solid #a3d9a5}
+
+.memory-text{
+  margin-top:18px;
+  font-family:'Pacifico',cursive;
+  font-size:22px;
+  color:#ffb6d9;
+}
+
+.next-btn{
+  padding:14px 28px;
+  font-family:'Pacifico',cursive;
+  font-size:20px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ff69b4,#ff1493);
+  color:white;
+  cursor:pointer;
+}
+
+/* ================= PAGE 3 ================= */
+#page3{
+  background:linear-gradient(to bottom,#87ceeb,#eaffea);
+  color:#2b2b2b;
+  flex-direction:column;
+}
+
+.bird{
+  position:absolute;
+  font-size:20px;
+  animation:fly 14s linear infinite;
+}
+@keyframes fly{
+  from{transform:translateX(-10vw)}
+  to{transform:translateX(110vw)}
+}
+
+.flower{
+  position:absolute;
+  font-size:22px;
+  animation:floatFlower 12s linear infinite;
+}
+@keyframes floatFlower{
+  from{transform:translateY(110vh)}
+  to{transform:translateY(-120vh)}
+}
+
+.ground{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:200px;
+  background:linear-gradient(to top,#2ecc71,#a8e6cf);
+}
+
+.letter-box{
+  background:rgba(255,255,255,0.85);
+  padding:30px;
+  border-radius:25px;
+  max-width:420px;
+  z-index:2;
+}
+.letter-box h2{
+  font-family:'Pacifico',cursive;
+  text-align:center;
+  color:#ff6f91;
+}
+#letter{
+  font-family:'Handlee',cursive;
+  line-height:1.9;
+}
+.final-btn{
+  display:none;
+  margin-top:25px;
+  padding:14px 26px;
+  font-family:'Pacifico',cursive;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#56ab2f,#a8e063);
+  color:white;
+  cursor:pointer;
+}
+
+/* ================= PAGE 4 ================= */
+#page4{
+  background:linear-gradient(to bottom,#050016,#12002f,#1b0036);
+  flex-direction:column;
+  text-align:center;
+  color:white;
+}
+
+#page4 h1{
+  font-family:'Pacifico',cursive;
+  font-size:42px;
+  color:#ffd6ec;
+  text-shadow:0 0 25px rgba(255,182,217,.9);
+}
+#page4 p{
+  font-family:'Handlee',cursive;
+  font-size:18px;
+  margin-top:10px;
+}
+
+.firework{
+  position:absolute;
+  font-size:28px;
+  animation:explode 3s infinite;
+}
+@keyframes explode{
+  0%{transform:scale(0);opacity:0}
+  50%{transform:scale(1.2);opacity:1}
+  100%{transform:scale(1.8);opacity:0}
+}
+
+.heart{
+  position:absolute;
+  color:#ff4d6d;
+  animation:floatUp 8s linear infinite;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" src="dekha-ek-khwab.mp3" loop preload="auto"></audio>
+
+<!-- PAGE 1 -->
+<section id="page1" class="active">
+  <div class="moon"></div>
+  <h1>Click me if you think Dhruv is pagal 🤭</h1>
+  <button class="start-btn" onclick="startExperience()">Click me</button>
+  <div class="trees">
+    <div class="tree" style="left:10%"></div>
+    <div class="tree" style="left:30%"></div>
+    <div class="tree" style="left:55%"></div>
+    <div class="tree" style="left:75%"></div>
+  </div>
+  <div class="ocean">
+    <div class="wave"></div>
+    <div class="wave" style="animation-duration:14s"></div>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section id="page2">
+  <div class="memories">
+    <div class="memory-card soft-frame"><img src="images/anu1.jpg"><p class="memory-text">First Glimpse of Anu</p></div>
+    <div class="memory-card soft-frame"><img src="images/anu2.jpg"><p class="memory-text">We complete each other</p></div>
+    <div class="memory-card soft-frame"><video src="IMG_0979.MOV" autoplay muted loop playsinline></video><p class="memory-text">Why Anu is soo cute!!</p></div>
+    <div class="memory-card hot-frame"><video src="IMG_0987.MP4" autoplay muted loop playsinline></video><p class="memory-text">Hye Mai Marja!!</p></div>
+    <div class="memory-card cute-frame"><img src="images/anu3.jpg"><p class="memory-text">Mera chotu sa bacha</p></div>
+    <div class="memory-card white-frame"><video src="IMG_2334.MOV" autoplay muted loop playsinline></video><p class="memory-text">My adorable Rasgulla</p></div>
+    <div class="memory-card flower-frame"><img src="images/anu4.jpg"><p class="memory-text">Flowers made of Love</p></div>
+    <button class="next-btn" onclick="goToPage(3)">Now click here cutie!</button>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section id="page3">
+  <div class="bird" style="top:15%">🐦</div>
+  <div class="bird" style="top:25%">🐦</div>
+  <div class="flower" style="left:20%">🌸</div>
+  <div class="flower" style="left:60%">🌼</div>
+  <div class="letter-box">
+    <h2>My Love 💌</h2>
+    <div id="letter"></div>
+    <button id="toPage4" class="final-btn" onclick="goToPage(4)">Click here Rasgulle</button>
+  </div>
+  <div class="ground"></div>
+</section>
+
+<!-- PAGE 4 -->
+<section id="page4">
+  <div class="firework" style="left:20%">🎆</div>
+  <div class="firework" style="left:60%">🎇</div>
+  <h1>Happy Valentine’s Day 💖</h1>
+  <p>From Dhruv to Anu</p>
+</section>
+
+<script>
+/* stars */
+for(let i=0;i<120;i++){
+  let s=document.createElement("div");
+  s.className="star";
+  s.style.left=Math.random()*100+"vw";
+  s.style.top=Math.random()*60+"vh";
+  document.body.appendChild(s);
+}
+
+/* shooting stars */
+setInterval(()=>{
+  let sh=document.createElement("div");
+  sh.className="shooting";
+  sh.style.left=Math.random()*100+"vw";
+  sh.style.top=Math.random()*40+"vh";
+  document.body.appendChild(sh);
+  setTimeout(()=>sh.remove(),2000);
+},4000);
+
+/* page2 background */
+setInterval(()=>{
+  if(!page2.classList.contains("active"))return;
+  let el=document.createElement("div");
+  el.className="bg-float";
+  el.innerHTML=Math.random()>0.5?"❤":"❀";
+  el.style.left=Math.random()*100+"vw";
+  el.style.color=Math.random()>0.5?"#ff69b4":"#b388ff";
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),12000);
+},400);
+
+/* music + navigation */
+const music=document.getElementById("bgMusic");
+music.volume=0;
+
+function startExperience(){
+  music.play().then(()=>{
+    let v=0;
+    let fade=setInterval(()=>{
+      if(v<0.5){v+=0.02;music.volume=v}else clearInterval(fade)
+    },200);
+  });
+  goToPage(2);
+}
+
+function goToPage(n){
+  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+  document.getElementById("page"+n).classList.add("active");
+  if(n===3) startLetter();
+}
+
+/* letter typing */
+const text=`Dear Anu,
+
+Since the day you came into my life, things started feeling lighter.
+You turned small moments into memories and ordinary days into something special.
+
+I know I’m stupid sometimes, actually many times :)
+but my feelings for you are real, pure, and always yours.
+
+No matter how far we are,
+you will always be close to my heart.`;
+
+let i=0;
+function startLetter(){
+  const el=document.getElementById("letter");
+  const btn=document.getElementById("toPage4");
+  el.innerHTML="";
+  btn.style.display="none";
+  i=0;
+  (function type(){
+    if(i<text.length){
+      el.innerHTML+=text.charAt(i++);
+      setTimeout(type,40);
+    }else{
+      btn.style.display="block";
+    }
+  })();
+}
+</script>
+
+</body>
+</html>
